@@ -34,8 +34,16 @@ public class ImageLoaderModule extends ReactContextBaseJavaModule {
   private static final String ERROR_PREFETCH_FAILURE = "E_PREFETCH_FAILURE";
   private static final String ERROR_GET_SIZE_FAILURE = "E_GET_SIZE_FAILURE";
 
+  private final Object mCallerContext;
+
   public ImageLoaderModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    mCallerContext = this;
+  }
+
+  public ImageLoaderModule(ReactApplicationContext reactContext, Object callerContext) {
+    super(reactContext);
+    mCallerContext = callerContext;
   }
 
   @Override
