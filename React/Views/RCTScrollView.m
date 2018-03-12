@@ -374,11 +374,11 @@ RCT_NOT_IMPLEMENTED(- (instancetype)init)
 
 - (void)setRefreshControl:(RCTRefreshControl *)refreshControl
 {
-  if (_refreshControl) {
-    [_refreshControl removeFromSuperview];
+  if (refreshControl) {
+    [refreshControl removeFromSuperview];
   }
-  _refreshControl = refreshControl;
-  [self addSubview:_refreshControl];
+  refreshControl = refreshControl;
+  [self addSubview:refreshControl];
 }
 
 @end
